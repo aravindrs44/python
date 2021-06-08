@@ -27,7 +27,8 @@ class User:
 class BankAccount:
     bank_name = "Bank of India"
 
-    def __init__(self, int_rate = 0.02, balance = 0):
+    def __init__(self, account_name, int_rate = 0.02, balance = 0):
+        self.account_name = account_name
         self.int_rate = int_rate
         self.balance = balance
 
