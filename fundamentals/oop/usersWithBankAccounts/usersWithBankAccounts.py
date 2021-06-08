@@ -1,5 +1,6 @@
 class User:
     bank_name = "First National Dojo"
+
     def __init__(self, name, email_address, account_name):
         self.name = name
         self.email_address = email_address
@@ -21,6 +22,7 @@ class User:
         self.account_balance -= amount
         other_user.account_balance += amount
         return self, other_user
+
 
 class BankAccount:
     bank_name = "Bank of India"
@@ -51,5 +53,6 @@ class BankAccount:
         print(cls.bank_name)
 
 aravind = User("Aravind Sripada", "sentyss44@gmail.com")
+
 aravind.display_user_balance()
 aravind.make_deposit(300).display_user_balance()
