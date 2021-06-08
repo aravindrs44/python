@@ -1,4 +1,6 @@
 class BankAccount:
+    bank_name = "Bank of India"
+
     def __init__(self, intrate, balance = 0):
         self.intrate = intrate
         self.balance = balance
@@ -23,8 +25,14 @@ class BankAccount:
         self.balance += (self.balance*self.intrate)
         return self
 
+    @classmethod
+    def all_accounts_info(cls):
+        print(cls.bank_name)
+
 aravind = BankAccount(0.01, 100)
 amma = BankAccount(.10, 1000000)
 aravind.deposit(100).deposit(200).deposit(200).withdraw(400).yield_interest().display_account_info()
 amma.deposit(500000).deposit(300000).withdraw(100000).withdraw(100000).withdraw(100000).withdraw(100000).yield_interest().display_account_info()
+BankAccount.all_accounts_info()
+
 
