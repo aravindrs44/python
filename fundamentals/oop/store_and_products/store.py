@@ -1,3 +1,5 @@
+from products import Product
+
 class Store:
     def __init__(self, name, product_list = []):
         self.name = name
@@ -9,11 +11,18 @@ class Store:
 
     def sell_product(self, id):
         self.product_list.pop(id)
+        self.product.print_info()
 
     def inflation(self, percent_increase):
         if percent_increase < 0:
-            self
+            for prod_counter in product_list:
+                self.product.update_price(percent_increase, False)
+        elif: percent_increase > 0:
+            for prod_counter in product_list:
+                self.product.update_price(percent_increase, True)
+        else:
+            print("No change")
 
 
     def set_clearance(self, category, percent_discount):
-        pass
+        
