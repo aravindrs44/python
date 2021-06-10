@@ -1,0 +1,20 @@
+*  {
+    margin: 0px;
+}
+
+.row    {
+    display: flex;
+}
+
+.squares    {
+    height: 5em;
+    width: 5em;
+}
+
+.color0  {
+    background-color: #ffffe0;
+}
+
+.color1 {
+    background-color: #556b2f;
+}
