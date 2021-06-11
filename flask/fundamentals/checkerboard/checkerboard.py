@@ -10,7 +10,7 @@ def ycontrolled(y):
     return render_template('index.html', x = 8, y = y)
 
 @app.route('/<int:x>/<int:y>')
-def xycontrolled():
+def xycontrolled(x, y):
     return render_template('index.html', x = x, y = y)
 
 if __name__== "__main__":
