@@ -35,15 +35,16 @@ def show_page(id):
 def edit_page(id):
     return render_template("edit.html", id = id)
 
-@app.route("/users/edit")
-def edit_user():
+@app.route("/edit/<int:id>", methods = ["POST"])
+def edit_user(id):
     data = {
-        'id': request.form['id'],
+        'id': id,
         'first_name': request.form['first_name'],
         'last_name': request.form['last_name'],
         'email': request.form['email']
     }
     User.edit_user(data)
-    redirect("/users/<int:id>/edit")
+    redirect("/users/edit")
+
 if __name__ == "__main__":
     app.run(debug = True)
