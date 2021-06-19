@@ -7,6 +7,13 @@
     <title>Read(One)</title>
 </head>
 <body>
-    
+    <div>
+        <h1>User {{id}}</h1>
+        <a href="/users">Home</a>
+    </div>
+    <p>Full Name: {{one_user.first_name}} {{one_user.last_name}}</p>
+    <p>Email:{{one_user.email}}</p>
+    <p>Created:{{one_user.created_at}}</p>
+    <p>Last Updated:{{one_user.updated_at}}</p>
 </body>
 </html>

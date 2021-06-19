@@ -25,11 +25,21 @@ class User:
         return results
 
     @classmethod
-    def edit_user(cls, data):
-        query = "UPDATE users SET first_name = %(first_name)s, last_name = %(last_name)s, email = %(email)s, updated_at = NOW() WHERE id = %(id)s"
+    def edit_query(cls, data):
+        query = "UPDATE users SET first_name = %(first_name)s, last_name = %(last_name)s, email = %(email)s, updated_at = NOW() WHERE id = %(id)s;"
         results = connectToMySQL("users_cr").query_db(query, data)
-        users = []
-        for row in results:
-            users.append(cls(row))
         return results
+
+    @classmethod
+    def get_one_user(cls, data):
+        query = "SELECT * FROM users WHERE id = %(id)s;"
+        results = connectToMySQL("users_cr").query_db(query, data)
+
+        user = cls(results[0])
+        return user
+
+    @classmethod
+    def delete_user(cls, data):
+        query = "DELETE FROM users WHERE id = %(id)s;"
+        connectToMySQL("users_cr").query_db(query, data)
 
