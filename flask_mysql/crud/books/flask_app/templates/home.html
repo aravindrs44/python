@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors</title>
+</head>
+<body>
+    <div>
+        <h1>New Author</h1>
+        <form action="post">
+            <input type="text" placeholder="Full Name" name="full_name">
+            <button>Create</button>
+        </form>
+    </div>
+
+    <div>
+        <h1>All Authors</h1>
+        {% for author in result_authors%}
+            <a href="/author/{{author.id}}">{{author.name}}</a>
+        {%endfor%}
+        <a href="">Add Book</a>
+    </div>
+</body>
+</html>
