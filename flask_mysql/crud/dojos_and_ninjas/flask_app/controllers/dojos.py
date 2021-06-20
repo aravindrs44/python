@@ -15,7 +15,7 @@ def all_dojo_page():
 # ------------  SHOW ONE USER PAGE  -------------------#
 @app.route('/dojos/<int:id>')
 def one_dojo_page(id):
-    pass
+    
     return render_template("dojo_show.html", dojo_id = id)
 
-# ------------  SHOW ONE USER PAGE  -------------------#
+# ----------------  NEW NINJA PAGE  -------------------#

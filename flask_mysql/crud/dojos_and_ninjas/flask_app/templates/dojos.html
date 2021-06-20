@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dojos</title>
-    <link rel="stylesheet" href="flask_app\static\styles.css">
+    <link rel="stylesheet" href="C:\Users\senla\Documents\coding_dojo\python\flask_mysql\crud\dojos_and_ninjas\flask_app\static\styles.css">
 </head>
 <body>
-    <div class="container">
+    <div style="display: flex; justify-content: space-evenly;">
         <div class="left-col">
             <h1>New Dojo</h1>
             <form action="POST">
-                <input type="text" placeholder="Dojo Name">
+                <input style="display: block;" type="text" placeholder="Dojo Name">
                 <button>Create</button>
             </form>
         </div>
@@ -20,9 +20,9 @@
         <div class="right-col ">
             <h1>All Dojos</h1>
             {%for index in dojos%}
-                <a class="inline" href="/dojos/{{index.id}}">{{index.name}}</a>
+                <a style="display: block;" href="/dojos/{{index.id}}">{{index.name}}</a>
             {%endfor%}
-            <a href="/dojos/{{dojo_id}}">Add Ninja</a>
+            <a href="/ninjas">Add Ninja</a>
         </div>
     </div>
 </body>

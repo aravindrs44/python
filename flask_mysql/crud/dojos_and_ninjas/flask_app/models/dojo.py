@@ -15,3 +15,10 @@ class Dojo:
         for row in results:
             dojos.append(cls(row))
         return dojos
+
+    @classmethod
+    def get_one_dojo(cls, data):
+        query = "SELECT * FROM dojos WHERE id %{id}s;"
+        results = connectToMySQL("dojos_and_ninjas_schema").query_db(query)
+        dojo = cls(result[0])
+        return dojo
