@@ -30,7 +30,7 @@ class Dojo:
         if len(dojo['name']) < 3:
             flash("Name must be at least 3 characters.")
             is_valid = False
-        if len(dojo['location']) < 3:
-            flash("Location must be at least 3 characters.")
+        if len(dojo['comment']) < 3:
+            flash("Comment must be at least 3 characters.")
             is_valid = False
         return is_valid
