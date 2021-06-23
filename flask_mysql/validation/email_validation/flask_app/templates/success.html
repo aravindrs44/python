@@ -17,7 +17,7 @@
 
     <h2>Email Addresses Entered:</h2>
     {%for row in display%}
-        <p>{{row["email"]}} {{row[created_at]}}</p>
+        <p>{{row.email}} {{row.created_at}}</p>
     {%endfor%}
 </body>
 </html>

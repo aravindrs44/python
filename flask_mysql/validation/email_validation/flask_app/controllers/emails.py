@@ -9,12 +9,12 @@ def home_page():
 @app.route('/valid_check', methods = ["POST"])
 def check_valid():
     data = {"email": request.form["email"]}
-    if not Email.validate_email(data["email"]):
+    if not Email.validate_email(data):
         return redirect('/')
     current_email = Email.create_email(data)
     return redirect('/success')
 
 @app.route('/success')
 def success_page():
-    display = get_all_emails()
-    return render_template('success.html')
+    display = Email.get_all_emails()
+    return render_template('success.html', display = display)

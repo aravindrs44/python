@@ -12,20 +12,22 @@ class Email:
         self.updated_at = data['updated_at']
 
     @classmethod
-    def create_email(data):
-        query = "INSERT INTO users (email, created_at, updated_at) VALUES(%{email}s, NOW(), NOW();)"
+    def create_email(cls, data):
+        query = "INSERT INTO email (email, created_at, updated_at) VALUES(%(email)s, NOW(), NOW());"
         results = connectToMySQL("email_validation_schema").query_db(query, data)
 
     @classmethod
-    def get_all_emails():
-        query = "SELECT * FROM emails ORDER BY id DESC;"
+    def get_all_emails(cls):
+        query = "SELECT * FROM email ORDER BY id DESC;"
         results = connectToMySQL("email_validation_schema").query_db(query)
-        return cls(results)
+        email = []
+        for row in results:
+            email.append(cls(row))
+        return email
 
     @staticmethod
     def validate_email(thisispain):
         is_valid = True
-        print(email)
         if not EMAIL_REGEX.match(thisispain['email']):
             flash("Invalid email address!")
             is_valid = False
