@@ -17,6 +17,8 @@ def initialize_success_page():
 
 @app.route('/loggedin')
 def initialize_loggedin_page():
+    if 'uuid' not in session:
+        return redirect('/')
     print(session['uuid'])
     data = {
         'id': session['uuid']
