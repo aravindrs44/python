@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <div class="container">
+        <div class="left-col">
+            <h1>Register</h1>
+            <form action="/register" method="post">
+                <input class="block" type="text" name="first_name" placeholder="First Name">
+                <input class="block" type="text" name="last_name" placeholder="Last Name">
+                <input class="block" type="text" name="email" placeholder="Email">
+                <input class="block" type="password" name="password" placeholder="Password">
+                <input class="block" type="password" name="confirm_password" placeholder="Confirm Password">
+                <button>Register!</button>
+            </form>
+            {% with messages = get_flashed_messages() %}     
+                {% if messages %}                            
+                    {% for message in messages %}            
+                        <p>{{message}}</p>                   
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+
+        <div class="right-col">
+            <h1>Login</h1>
+            <form action="/welcome" method="post">
+                <input class="block" type="text" name="log_in_email" placeholder="Email">
+                <input class="block" type="password" name="log_in_password" placeholder="Password">
+                <button>Login!</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
